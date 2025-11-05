@@ -8,107 +8,171 @@ scoreboard objectives add extract.points.team.temp dummy
 scoreboard players operation extract.RedRaccoons extract.points.team.temp = extract.RedRaccoons extract.points.team
 scoreboard players operation extract.OrangeOtters extract.points.team.temp = extract.OrangeOtters extract.points.team
 scoreboard players operation extract.PinkPikas extract.points.team.temp = extract.PinkPikas extract.points.team
+scoreboard players operation extract.YellowYaks extract.points.team.temp = extract.YellowYaks extract.points.team
 scoreboard players operation extract.GreenGoats extract.points.team.temp = extract.GreenGoats extract.points.team
 scoreboard players operation extract.CyanCougars extract.points.team.temp = extract.CyanCougars extract.points.team
 scoreboard players operation extract.PurplePenguins extract.points.team.temp = extract.PurplePenguins extract.points.team
+scoreboard players operation extract.BlueBears extract.points.team.temp = extract.BlueBears extract.points.team
 
 # then reset ranks
 scoreboard players set extract.RedRaccoons extract.points.team.rank -1
 scoreboard players set extract.OrangeOtters extract.points.team.rank -1
 scoreboard players set extract.PinkPikas extract.points.team.rank -1
+scoreboard players set extract.YellowYaks extract.points.team.rank -1
 scoreboard players set extract.GreenGoats extract.points.team.rank -1
 scoreboard players set extract.CyanCougars extract.points.team.rank -1
 scoreboard players set extract.PurplePenguins extract.points.team.rank -1
+scoreboard players set extract.BlueBears extract.points.team.rank -1
 
 # set our highest value to -1
-scoreboard players set $extract.highest extract.points.team.temp -1
+scoreboard players set $stmc.highest extract.points.team.temp -1
 
 # then determine the highest value of teams without a rank
-execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
-execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
-execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
-execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
-execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
-execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
 
 # then determine which team has that exact value & give them the highest rank applicable
-execute if score $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 1
-execute if score $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 1
-execute if score $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 1
-execute if score $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 1
-execute if score $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 1
-execute if score $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 1
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 1
 
 # and then repeat the process until all teams have been ranked
-scoreboard players set $extract.highest extract.points.team.temp -1
-execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
-execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
-execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
-execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
-execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
-execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
-execute if score $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 2
-execute if score $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 2
-execute if score $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 2
-execute if score $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 2
-execute if score $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 2
-execute if score $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 2
+scoreboard players set $stmc.highest extract.points.team.temp -1
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 2
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 2
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 2
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 2
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 2
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 2
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 2
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 2
 
-scoreboard players set $extract.highest extract.points.team.temp -1
-execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
-execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
-execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
-execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
-execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
-execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
-execute if score $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 3
-execute if score $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 3
-execute if score $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 3
-execute if score $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 3
-execute if score $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 3
-execute if score $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 3
+scoreboard players set $stmc.highest extract.points.team.temp -1
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 3
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 3
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 3
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 3
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 3
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 3
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 3
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 3
 
-scoreboard players set $extract.highest extract.points.team.temp -1
-execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
-execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
-execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
-execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
-execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
-execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
-execute if score $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 4
-execute if score $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 4
-execute if score $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 4
-execute if score $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 4
-execute if score $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 4
-execute if score $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 4
+scoreboard players set $stmc.highest extract.points.team.temp -1
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 4
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 4
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 4
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 4
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 4
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 4
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 4
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 4
 
-scoreboard players set $extract.highest extract.points.team.temp -1
-execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
-execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
-execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
-execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
-execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
-execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
-execute if score $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 5
-execute if score $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 5
-execute if score $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 5
-execute if score $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 5
-execute if score $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 5
-execute if score $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 5
+scoreboard players set $stmc.highest extract.points.team.temp -1
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 5
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 5
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 5
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 5
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 5
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 5
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 5
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 5
 
-scoreboard players set $extract.highest extract.points.team.temp -1
-execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
-execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
-execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
-execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
-execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
-execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $extract.highest extract.points.team.temp run scoreboard players operation $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
-execute if score $extract.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 6
-execute if score $extract.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 6
-execute if score $extract.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 6
-execute if score $extract.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 6
-execute if score $extract.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 6
-execute if score $extract.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 6
+scoreboard players set $stmc.highest extract.points.team.temp -1
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 6
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 6
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 6
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 6
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 6
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 6
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 6
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 6
+
+scoreboard players set $stmc.highest extract.points.team.temp -1
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 7
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 7
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 7
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 7
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 7
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 7
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 7
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 7
+
+scoreboard players set $stmc.highest extract.points.team.temp -1
+execute unless score extract.RedRaccoons extract.points.team.rank matches 1.. if score extract.RedRaccoons extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp
+execute unless score extract.OrangeOtters extract.points.team.rank matches 1.. if score extract.OrangeOtters extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp
+execute unless score extract.PinkPikas extract.points.team.rank matches 1.. if score extract.PinkPikas extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp
+execute unless score extract.YellowYaks extract.points.team.rank matches 1.. if score extract.YellowYaks extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp
+execute unless score extract.GreenGoats extract.points.team.rank matches 1.. if score extract.GreenGoats extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp
+execute unless score extract.CyanCougars extract.points.team.rank matches 1.. if score extract.CyanCougars extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp
+execute unless score extract.PurplePenguins extract.points.team.rank matches 1.. if score extract.PurplePenguins extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp
+execute unless score extract.BlueBears extract.points.team.rank matches 1.. if score extract.BlueBears extract.points.team.temp > $stmc.highest extract.points.team.temp run scoreboard players operation $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp
+execute if score $stmc.highest extract.points.team.temp = extract.RedRaccoons extract.points.team.temp run scoreboard players set extract.RedRaccoons extract.points.team.rank 8
+execute if score $stmc.highest extract.points.team.temp = extract.OrangeOtters extract.points.team.temp run scoreboard players set extract.OrangeOtters extract.points.team.rank 8
+execute if score $stmc.highest extract.points.team.temp = extract.PinkPikas extract.points.team.temp run scoreboard players set extract.PinkPikas extract.points.team.rank 8
+execute if score $stmc.highest extract.points.team.temp = extract.YellowYaks extract.points.team.temp run scoreboard players set extract.YellowYaks extract.points.team.rank 8
+execute if score $stmc.highest extract.points.team.temp = extract.GreenGoats extract.points.team.temp run scoreboard players set extract.GreenGoats extract.points.team.rank 8
+execute if score $stmc.highest extract.points.team.temp = extract.CyanCougars extract.points.team.temp run scoreboard players set extract.CyanCougars extract.points.team.rank 8
+execute if score $stmc.highest extract.points.team.temp = extract.PurplePenguins extract.points.team.temp run scoreboard players set extract.PurplePenguins extract.points.team.rank 8
+execute if score $stmc.highest extract.points.team.temp = extract.BlueBears extract.points.team.temp run scoreboard players set extract.BlueBears extract.points.team.rank 8
 
 # <===== INDIVIDUAL RANKINGS =====>
 
@@ -246,3 +310,43 @@ scoreboard players set $extract.highest extract.points.indiv.temp -1
 execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
 execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
 execute as @a if score @s extract.points.indiv.rank matches 24 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 25 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 26 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 27 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 28 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 29 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 30 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 31 run scoreboard players reset @s extract.points.indiv.temp
+
+scoreboard players set $extract.highest extract.points.indiv.temp -1
+execute as @a run scoreboard players operation $extract.highest extract.points.indiv.temp > @s extract.points.indiv.temp
+execute as @a if score @s extract.points.indiv.temp = $extract.highest extract.points.indiv.temp unless score @s extract.points.indiv.rank matches 0.. run scoreboard players set @s extract.points.indiv.rank 24
+execute as @a if score @s extract.points.indiv.rank matches 32 run scoreboard players reset @s extract.points.indiv.temp

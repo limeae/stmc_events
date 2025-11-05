@@ -3,7 +3,7 @@
 # this function runs whenever beginning the extract game
 
 # teleport players to spawn
-execute in extract:extract run tp @a 0 101 0
+execute in extract:extract run tp @a 0 101 -18 0 0
 
 # force gamemode
 gamemode adventure @a

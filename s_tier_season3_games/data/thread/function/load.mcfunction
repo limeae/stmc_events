@@ -77,6 +77,15 @@ scoreboard objectives add stats.points.indiv.rank dummy
 # voting trackers
 scoreboard objectives add event.voting.investedTokens dummy
 scoreboard objectives add event.voting.bank used:carrot_on_a_stick
+# tracks which game will be played when
+scoreboard objectives add stats.game1 dummy
+scoreboard objectives add stats.game2 dummy
+scoreboard objectives add stats.game3 dummy
+scoreboard objectives add stats.game4 dummy
+scoreboard objectives add stats.game5 dummy
+scoreboard objectives add stats.game6 dummy
+scoreboard objectives add stats.game7 dummy
+scoreboard objectives add stats.game8 dummy
 # tracks individual points in each game VVVV
 scoreboard objectives add stats.points.indiv.g1 dummy
 scoreboard objectives add stats.points.indiv.g2 dummy
@@ -135,6 +144,7 @@ scoreboard players set stmc.handler event.timer.bgMins 2
 scoreboard players set stmc.handler event.timer.post_game 0
 
 # and finally, create each game thread's scoreboard
+scoreboard objectives add lobby.stage dummy
 scoreboard objectives add race.stage dummy
 scoreboard objectives add extract.stage dummy
 scoreboard objectives add solve.stage dummy
@@ -146,6 +156,7 @@ scoreboard objectives add blitz.stage dummy
 scoreboard objectives add finale.stage dummy
 
 # and reset handlers associated with each one
+scoreboard players reset lobby.handler lobby.stage
 scoreboard players reset race.handler race.stage
 scoreboard players reset extract.handler extract.stage
 scoreboard players reset solve.handler solve.stage

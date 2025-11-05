@@ -56,9 +56,11 @@ execute as @a[team=BLUE_BEARS] run item replace entity @s armor.feet with minecr
 team modify RED_RACCOONS collisionRule never
 team modify ORANGE_OTTERS collisionRule never
 team modify PINK_PIKAS collisionRule never
+team modify YELLOW_YAKS collisionRule never
 team modify GREEN_GOATS collisionRule never
 team modify CYAN_COUGARS collisionRule never
 team modify PURPLE_PENGUINS collisionRule never
+team modify BLUE_BEARS collisionRule never
 
 # and wrap it up with some scoreboard stuff
 # timers
@@ -126,13 +128,6 @@ scoreboard players set @a race.completion.rank 0
 scoreboard players set @a race.checkpoints_completed 0
 scoreboard players set @a race.currentPlacement 0
 scoreboard players set @a race.soundThisTick 0
-
-scoreboard players set race.RedRaccoons race.completion.rank 0
-scoreboard players set race.OrangeOtters race.completion.rank 0
-scoreboard players set race.PinkPikas race.completion.rank 0
-scoreboard players set race.GreenGoats race.completion.rank 0
-scoreboard players set race.CyanCougars race.completion.rank 0
-scoreboard players set race.PurplePenguins race.completion.rank 0
 
 scoreboard players set @a race.points.indiv 0
 scoreboard players set race.handler race.points.placement 8

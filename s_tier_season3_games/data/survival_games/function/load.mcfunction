@@ -88,5 +88,5 @@ scoreboard players set @a sg.r1.points 0
 scoreboard players set @a sg.r2.points 0
 scoreboard players set @a sg.r3.points 0
 
-# set the sidebar
-scoreboard objectives setdisplay sidebar sg.sidebar
+# reset the sidebar
+scoreboard objectives remove sg.sidebar

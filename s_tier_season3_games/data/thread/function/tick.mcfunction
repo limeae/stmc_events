@@ -37,33 +37,16 @@ execute as limeae unless entity @s[team=] run team join PURPLE_PENGUINS limeae
 execute as Navahamsta unless entity @s[team=] run team join PURPLE_PENGUINS Navahamsta
 
 # SPECTATORS
-#execute as @a unless entity @s[team=] run team join SPECTATORS @s
-
-# now, teleport players to the lobby
-#execute if score stmc.handler event.paused matches 1 in lobby:lobby as @a unless entity @s[nbt={Dimension:"lobby:lobby"}] run teleport @s 0 101 0
-#execute as @a if entity @s[nbt={Dimension:"lobby:lobby"}] run gamemode adventure @s
+execute as @a if entity @s[team=!RED_RACCOONS] if entity @s[team=!ORANGE_OTTERS] if entity @s[team=!PINK_PIKAS] if entity @s[team=!YELLOW_YAKS] \
+        if entity @s[team=!GREEN_GOATS] if entity @s[team=!CYAN_COUGARS] if entity @s[team=!PURPLE_PENGUINS] if entity @s[team=!BLUE_BEARS] \ 
+        if entity @s[team=!SPECTATORS] run team join SPECTATORS @s
 
 # and finally, we can get to the thread of the event
 
-# first, we update the stage
-# this function doesn't really do anything, but it's still useful for keeping some info
-# this function WAS going to do something, but now each subthread's /reset function updates the stage, so it isn't needed
-function lobby:stage_update
+# update player points & determine rankings from that
+function thread:points_update
+function thread:calculate_rankings
 
 # and depending on our current stage, we call an update somewhere else in the world
 # but we only call that update if the event is unpaused
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 0 run function lobby:pre_event/tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 1 run function trials:tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 2 run function lobby:between_game
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 3 run function survival_games:tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 4 run function lobby:between_game
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 5 run function delve:tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 6 run function lobby:between_game
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 7 run function race:tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 8 run function lobby:between_game
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 9 run function extract:tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 10 run function lobby:between_game
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 11 run function solve:tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 12 run function lobby:between_game
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 13 run function finale:tick
-execute if score stmc.handler event.paused matches 0 if score stmc.handler event.stage matches 14 run function lobby:after_event
+execute if score stmc.handler event.paused matches 0 run function thread:stage_tick

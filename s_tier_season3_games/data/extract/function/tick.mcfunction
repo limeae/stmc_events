@@ -7,9 +7,6 @@
 # 3- game
 # 4- delay4 (reset & point announcement)
 
-# run load function if this is our first time here
-execute unless score extract.handler extract.stage matches 0.. run function extract:load
-
 # run functions every tick
 execute if score extract.handler extract.stage matches 3..4 run function extract:points_update
 function extract:sidebar
