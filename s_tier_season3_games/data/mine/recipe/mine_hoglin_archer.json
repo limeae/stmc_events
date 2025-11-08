@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:diamond",
+        "minecraft:diamond",
+        "minecraft:diamond",
+        "minecraft:archer_pottery_sherd"
+    ],
+    "result": {
+        "id": "minecraft:firework_rocket",
+        "count": 1
+    }
+}
