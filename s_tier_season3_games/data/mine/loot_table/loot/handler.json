@@ -1,0 +1,71 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/creaking/archer",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/creaking/builder",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/creaking/fighter",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/creaking/tracker",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/hoglin/archer",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/hoglin/builder",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/hoglin/fighter",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/hoglin/tracker",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/warden/archer",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/warden/builder",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/warden/fighter",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:loot_table",
+          "value": "mine:loot/warden/tracker",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:sequence"
+}

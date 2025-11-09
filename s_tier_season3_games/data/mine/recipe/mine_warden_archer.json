@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:diamond",
+        "minecraft:archer_pottery_sherd",
+        "minecraft:diamond"
+    ],
+    "result": {
+        "id": "minecraft:snowball",
+        "count": 1
+    }
+}

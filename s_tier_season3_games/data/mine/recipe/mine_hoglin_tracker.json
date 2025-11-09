@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:diamond",
+        "minecraft:flow_pottery_sherd"
+    ],
+    "result": {
+        "id": "minecraft:torch",
+        "count": 1
+    }
+}

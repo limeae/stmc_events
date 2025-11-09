@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:diamond",
+        "minecraft:diamond",
+        "minecraft:shelter_pottery_sherd"
+    ],
+    "result": {
+        "id": "minecraft:white_wool",
+        "count": 4
+    }
+}

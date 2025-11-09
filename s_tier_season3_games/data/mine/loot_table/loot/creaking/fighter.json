@@ -1,0 +1,187 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "rolls": {
+        "type": "minecraft:binomial",
+        "n": 1,
+        "p": 0.5
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_pickaxe",
+          "weight": 1
+        }
+      ],
+      "functions": [
+        {
+          "function": "minecraft:set_components",
+          "components": {
+            "minecraft:can_break": [
+              {
+                "blocks": [
+                  "infested_stone",
+                  "diamond_ore"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "attacker",
+                "predicate": {
+                  "slots": {
+                    "weapon.offhand": {
+                      "items": "iron_pickaxe"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "attacker",
+                "predicate": {
+                  "slots": {
+                    "hotbar.*": {
+                      "items": "minecraft:iron_pickaxe"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "attacker",
+                "predicate": {
+                  "slots": {
+                    "inventory.*": {
+                      "items": "minecraft:iron_pickaxe"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:binomial",
+        "n": 1,
+        "p": 0.5
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:netherite_sword",
+          "weight": 1,
+          "functions": [],
+          "conditions": [
+            {
+              "condition": "minecraft:all_of",
+              "terms": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "attacker",
+                    "predicate": {
+                      "slots": {
+                        "inventory.*": {
+                          "items": "netherite_sword"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "attacker",
+                    "predicate": {
+                      "slots": {
+                        "hotbar.*": {
+                          "items": "netherite_sword"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "condition": "minecraft:entity_properties",
+                    "entity": "attacker",
+                    "predicate": {
+                      "slots": {
+                        "weapon.offhand": {
+                          "items": "netherite_sword"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:alternatives",
+          "children": [
+            {
+              "type": "minecraft:loot_table",
+              "value": "mine:loot/handler",
+              "weight": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "type": "minecraft:binomial",
+        "n": 1,
+        "p": 0.5
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:enchanted_golden_apple",
+          "weight": 1,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:empty",
+          "weight": 1
+        }
+      ]
+    }
+  ],
+  "random_sequence": "minecraft:sequence"
+}

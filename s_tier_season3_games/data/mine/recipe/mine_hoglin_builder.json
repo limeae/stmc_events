@@ -1,0 +1,11 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        "minecraft:diamond",
+        "minecraft:shelter_pottery_sherd"
+    ],
+    "result": {
+        "id": "minecraft:cobweb",
+        "count": 2
+    }
+}

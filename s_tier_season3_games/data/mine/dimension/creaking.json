@@ -1,15 +1,16 @@
 {
-  "type": "minecraft:overworld",
+  "type": "minecraft:the_nether",
   "generator": {
     "type": "minecraft:flat",
     "settings": {
-      "biome": "minecraft:the_void",
+      "biome": "minecraft:minebiome",
       "layers": [
         {
           "height": 0,
           "block": "minecraft:air"
         }
-      ]
+      ],
+      "structure_overrides": []
     }
   }
 }
