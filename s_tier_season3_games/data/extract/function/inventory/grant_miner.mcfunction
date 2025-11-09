@@ -21,4 +21,4 @@ item replace entity @s hotbar.1 with iron_pickaxe[can_break=[{blocks:"diamond_bl
                 tool={default_mining_speed:0.1,damage_per_block:0, \ 
                 rules:[{speed:800,correct_for_drops:true,blocks:"gold_block"},{speed:750,correct_for_drops:true,blocks:"diamond_block"}]}, \ 
                 custom_name={"color":"yellow","text":"Ore Breaker II"}]
-item replace entity @s hotbar.2 with potion[potion_contents={potion:swiftness},potion_duration_scale=0.2]
+item replace entity @s hotbar.2 with potion[potion_contents={potion:swiftness},potion_duration_scale=0.05]

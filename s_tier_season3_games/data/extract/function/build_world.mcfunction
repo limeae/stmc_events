@@ -608,3 +608,13 @@ execute in extract:extract if score .extractData .time matches 45 run \
         equipment:{feet:{id:"minecraft:chainmail_boots",count:1},legs:{id:"minecraft:leather_leggings",count:1},chest:{id:"minecraft:leather_chestplate",count:1},head:{id:"minecraft:amethyst_block",count:1},mainhand:{id:"minecraft:stone_sword",count:1},offhand:{id:"minecraft:splash_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:strong_harming"}}}},CustomName:{"bold":true,"color":"dark_purple","text":"Witch"}}
 execute in extract:extract if score .extractData .time matches 45 run \ 
         summon interaction -45 134 64 {width:1f,height:2f,Tags:["witch"]}
+
+scoreboard objectives remove .slot1
+scoreboard objectives remove .slot2
+scoreboard objectives remove .slot3
+scoreboard objectives remove .slot4
+scoreboard objectives remove .slot5
+scoreboard objectives remove .slot6
+scoreboard objectives remove .slot7
+scoreboard objectives remove .slot8
+scoreboard objectives remove .time
