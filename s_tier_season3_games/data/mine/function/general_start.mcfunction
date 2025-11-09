@@ -4,11 +4,16 @@ effect give @a saturation 1 255
 effect give @a hunger 5 5 true
 effect give @a instant_health 1 10
 effect give @a mining_fatigue 20 2 true
+effect give @a strength 20 0 true
 gamemode adventure @a
 scoreboard players reset @a mine.game.mined.diamond_ore
 scoreboard players reset @a mine.game.deathcount
 scoreboard players reset mine.handler mine.timer
 scoreboard players set mine.handler mine.stage.lobby 0
+
+scoreboard objectives setdisplay sidebar mine.points.mined.diamond_ore
+scoreboard players set STMC mine.points.mined.diamond_ore 2001
+scoreboard players set ---- mine.points.mined.diamond_ore 2000
 
 spawnpoint @a 0 90 0
 
@@ -41,11 +46,11 @@ clone 59 5 59 -59 0 -59 -59 120 -59
 clone 59 5 59 -59 0 -59 -59 140 -59
 clone 59 5 59 -59 0 -59 -59 160 -59
 
-tp @a[team=TEAM1] 0 22 0
-tp @a[team=TEAM2] 0 42 0
-tp @a[team=TEAM3] 0 62 0
-tp @a[team=TEAM4] 0 82 0
-tp @a[team=TEAM5] 0 102 0
-tp @a[team=TEAM6] 0 122 0
-tp @a[team=TEAM7] 0 142 0
-tp @a[team=TEAM8] 0 162 0
+tp @a[team=CYAN_COUGARS] 0 22 0
+tp @a[team=RED_RACCOONS] 0 42 0
+tp @a[team=GREEN_GOATS] 0 62 0
+tp @a[team=PURPLE_PENGUINS] 0 82 0
+tp @a[team=ORANGE_OTTERS] 0 102 0
+tp @a[team=YELLOW_YAKS] 0 122 0
+tp @a[team=BLUE_BEARS] 0 142 0
+tp @a[team=PINK_PIKAS] 0 162 0
