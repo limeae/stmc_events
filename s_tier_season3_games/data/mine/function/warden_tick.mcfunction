@@ -21,7 +21,7 @@ execute as @a if items entity @s weapon.offhand compass at @s if score @n[type=w
 execute as @a if items entity @s weapon.offhand compass at @s if score @n[type=warden,distance=..20] mine.game.y = @s mine.game.y run setblock ~ 199 ~ air
 
 
-execute unless entity @a[gamemode=adventure] run function mine:end
+execute unless entity @a[gamemode=adventure] run function mine:general_end
 
 
 execute if score mine.handler mine.timer matches 20 run function mine:mobs/game/warden/archer
@@ -34,6 +34,12 @@ execute if score mine.handler mine.timer matches 40 run title @a title "Warden"
 
 execute if score mine.handler mine.timer matches 400 run function mine:game/openwalls
 
-execute if score mine.handler mine.timer matches 600 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^10 ^ ^10 run function mine:mobs/game/warden/warden
+execute if score mine.handler mine.timer matches 450 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^10 run function mine:mobs/game/warden/warden
+execute if score mine.handler mine.timer matches 650 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^10 run function mine:mobs/game/warden/warden
+execute if score mine.handler mine.timer matches 850 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^10 run function mine:mobs/game/warden/warden
+execute if score mine.handler mine.timer matches 1050 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^10 run function mine:mobs/game/warden/warden
+execute if score mine.handler mine.timer matches 1250 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^10 run function mine:mobs/game/warden/warden
+execute if score mine.handler mine.timer matches 1450 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^10 run function mine:mobs/game/warden/warden
+execute if score mine.handler mine.timer matches 1650 as @a[gamemode=adventure] at @s rotated as @s rotated ~ 0 positioned ^ ^ ^10 run function mine:mobs/game/warden/warden
 
 
