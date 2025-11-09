@@ -76,6 +76,7 @@ scoreboard objectives add stats.points.indiv dummy
 scoreboard objectives add stats.points.indiv.rank dummy
 # voting trackers
 scoreboard objectives add event.voting.investedTokens dummy
+scoreboard objectives add event.voting.investedTokensTemp dummy
 scoreboard objectives add event.voting.bank used:carrot_on_a_stick
 # tracks which game will be played when
 scoreboard objectives add stats.game1 dummy
@@ -123,6 +124,7 @@ scoreboard players set stmc.handler event.stage 0
 
 # everyone starts with 0 invested tokens
 scoreboard players set @a event.voting.investedTokens 0
+scoreboard players set @a event.voting.investedTokensTemp 0
 
 # and set some multiplier values
 scoreboard players set stmc.handler event.multipliers.g1 100

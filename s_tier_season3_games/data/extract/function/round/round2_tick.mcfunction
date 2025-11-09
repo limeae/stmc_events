@@ -52,6 +52,9 @@ execute in extract:extract as @e[tag=miner] on attacker run function extract:inv
 execute in extract:extract as @e[tag=witch] on attacker run function extract:inventory/grant_witch
 execute in extract:extract as @e[type=interaction] run data remove entity @s attack
 
+# prevent extra items at the start of the round
+execute in extract:extract if score extract.handler extract.timer.game.round2 matches ..300 run kill @e[type=item]
+
 # countdown at 5 seconds
 execute if score extract.handler extract.timer.game.round2 matches 200 run title @a actionbar {text:"5 seconds!",color:red,bold:true}
 execute as @a at @s if score extract.handler extract.timer.game.round2 matches 200 run playsound minecraft:block.note_block.pling master @a ~ ~ ~ 0.8 1

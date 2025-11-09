@@ -48,7 +48,7 @@ execute as @a if score @s extract.stats.kills.temp = $extract.highest extract.st
 scoreboard players reset @s extract.stats.kills.temp
 
 # <===== END OF ROUND RESETS =====>
-execute if score extract.handler extract.timer.delay3 matches 2 run scoreboard players set extract.handler extract.stats.roundsCompleted 5
+execute if score extract.handler extract.timer.delay3 matches 2 run scoreboard players set extract.handler extract.stats.roundsCompleted 7
 execute if score extract.handler extract.timer.delay3 matches 2 run gamemode spectator @a
 
 # <===== KILLS ANNOUNCEMENT =====>

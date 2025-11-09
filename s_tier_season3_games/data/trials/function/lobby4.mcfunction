@@ -64,5 +64,5 @@ execute if score tr.handler tr.timer.lobby4 matches 700 if score tr.handler tr.s
 execute if score tr.handler tr.timer.lobby4 matches 700 if score tr.handler tr.stage.game4 matches 4 run title @a title {"text":"TOWERS",color:"dark_aqua"}
 execute if score tr.handler tr.timer.lobby4 matches 701 run title @a subtitle {"text":"Teleporting in 5 seconds.","color":"dark_aqua"}
 
-# teleport to game 2
+# teleport to game 4
 execute if score tr.handler tr.timer.lobby4 matches 800 run scoreboard players set tr.handler tr.stage 7

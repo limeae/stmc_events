@@ -18,3 +18,8 @@ execute if score stmc.handler event.stage matches 1 if score stmc.handler stats.
 execute if score stmc.handler event.stage matches 1 if score stmc.handler stats.game1 matches 5 run function extract:tick
 execute if score stmc.handler event.stage matches 1 if score stmc.handler stats.game1 matches 6 run function blitz:tick
 execute if score stmc.handler event.stage matches 1 if score stmc.handler stats.game1 matches 7 run function survival_games:tick
+
+# <===== STAGE TWO =====>
+# lobby stage
+
+execute if score stmc.handler event.stage matches 2 run function lobby:between/tick

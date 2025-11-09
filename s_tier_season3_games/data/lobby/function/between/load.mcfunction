@@ -3,7 +3,7 @@
 # this function runs whenever instantiating a lobby
 
 # teleport players to spawn
-execute as @a unless entity @s[nbt={Dimension:"lobby:lobby"}] in lobby:lobby run tp @s 0 100 0
+execute as @a in lobby:lobby run tp @s 0 100 0
 
 # force gamemode
 gamemode adventure @a
@@ -17,6 +17,7 @@ weather clear
 # set appropriate gamerules
 gamerule doDaylightCycle false
 gamerule doWeatherCycle false
+gamerule keepInventory true
 
 # clear inventories
 clear @a
@@ -49,6 +50,7 @@ team modify BLUE_BEARS collisionRule never
 # and wrap it up with some scoreboard stuff
 # timers
 scoreboard objectives add lobby.timer dummy
+scoreboard objectives add lobby.timer.voteStage dummy
 scoreboard objectives add lobby.timer.temp dummy
 scoreboard objectives add lobby.timer.secs dummy
 scoreboard objectives add lobby.timer.mins dummy
@@ -65,6 +67,7 @@ scoreboard objectives add lobby.voting.brawlCount dummy
 
 # (re)set all necessary values
 scoreboard players set lobby.handler lobby.timer 0
+scoreboard players set lobby.handler lobby.timer.voteStage 0
 scoreboard players set lobby.handler lobby.timer.temp 0
 scoreboard players set lobby.handler lobby.timer.secs 0
 scoreboard players set lobby.handler lobby.timer.mins 0
@@ -78,5 +81,8 @@ execute if score stmc.handler event.stage matches 8 run scoreboard players set l
 execute if score stmc.handler event.stage matches 10 run scoreboard players set lobby.handler lobby.timer.switch 1800
 execute if score stmc.handler event.stage matches 12 run scoreboard players set lobby.handler lobby.timer.switch 1800
 execute if score stmc.handler event.stage matches 14 run scoreboard players set lobby.handler lobby.timer.switch 1200
+
+# set stage
+scoreboard players set lobby.handler lobby.stage 0
 
 scoreboard objectives remove lobby.sidebar
